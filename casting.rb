@@ -1,4 +1,4 @@
-require_relative 'roles'
+require_relative 'role'
 require_relative 'actor'
 require_relative 'action'
 
