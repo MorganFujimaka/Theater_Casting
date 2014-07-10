@@ -5,7 +5,7 @@ captain_america_role = Role.new("Captain America", "male", 17..40)
 
 (which means that only men in age from 17 till 40 are suitable for this role)
 
-### Secondly, let's send an invitation to an actor (or just create one :)):
+### Secondly, let's send an invitation to an actor (or just create one):
 awesome_actor = Actor.new("Morgan", 26, "male")
 
 (someone Morgan, 26 years old)
