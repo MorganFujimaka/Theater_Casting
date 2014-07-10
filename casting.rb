@@ -5,7 +5,7 @@ require_relative 'action'
 class Casting
 
   COMMISION = { "Jack Nicholson" => :male, "Mel Gibson" => :male, "Audrey Hepburn" => :female, 
-  	            "Kate Beckinsale" => :female, "Hugh Jackman" => :male }
+                "Kate Beckinsale" => :female, "Hugh Jackman" => :male }
 
   attr_reader :role
 
