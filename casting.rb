@@ -20,7 +20,8 @@ class Casting
   def perform(actor, action)
     raise "You are not suitable for the #{role.name} role, get out!" unless is_suitable?(actor)
     raise "Not so quickly, baby, you can't act twice for this role!" if actor.actions.any? {|a| a[:role] == role.name}
-    actor.actions << { role: role.name, topic: action.topic, time: action.time, text: action.text, average: average_score(actor, action) }
+    actor.actions << { role: role.name, topic: action.topic, time: action.time, text: action.text,
+                       average: average_score(actor, action) }
   end
 
   def rate_actor(actor, action)
