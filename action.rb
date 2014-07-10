@@ -8,5 +8,4 @@ class Action
 	  @text = text
 	end
 
-
 end

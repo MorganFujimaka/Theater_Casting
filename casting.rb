@@ -7,28 +7,27 @@ class Casting
   COMMISION = { "Jack Nicholson" => :male, "Mel Gibson" => :male, "Audrey Hepburn" => :female, 
   	            "Kate Beckinsale" => :female, "Hugh Jackman" => :male }
 
-  attr_reader :role, :ratings
+  attr_reader :role
 
   def initialize(role)
   	@role = role
-  	@ratings = []
   end
 
   def is_suitable?(actor)
   	role.sex == actor.sex && role.age.include?(actor.age)
   end
 
-  def action(actor, action)
+  def perform(actor, action)
   	raise "You are not suitable for the #{role.name} role, get out!" unless is_suitable?(actor)
-  	raise "Not so quickly, baby, you can't act twice!" if actor.actions.any? {|a| a[:role] == role.name}
-  	actor.actions << { role: role.name, topic: action.topic, time: action.time, text: action.text, average: average_mark(actor, action) }
+  	raise "Not so quickly, baby, you can't act twice for this role!" if actor.actions.any? {|a| a[:role] == role.name}
+  	actor.actions << { role: role.name, topic: action.topic, time: action.time, text: action.text, average: average_score(actor, action) }
   end
 
   def rate_actor(actor, action)
     COMMISION.map do |k, v|
       if (v == :male) && (actor.sex == "female") && (18..25).include?(actor.age)
         rand(7..10)
-      elsif (v == :female) && (action.text.split.size < 30)
+      elsif (v == :female) && (action.text.gsub(/[[:punct:]]/,"").split.size < 30)
       	rand(1..7)
       else
         rand(1..10)
@@ -36,25 +35,26 @@ class Casting
     end
   end
 
-  def average_mark(actor, action)
+  def average_score(actor, action)
   	rate_actor(actor, action).inject { |sum, m| sum + m }.to_f / rate_actor(actor, action).size
   end  
 
 end
 
-role1 = Role.new("Iron Man", "male", 15..40)
-role2 = Role.new("Captain America", "male", 15..30)
+captain_america_role = Role.new("Captain America", "male", 17..40)
+iron_role = Role.new("Iron Man", "male", 15..34)
 
-actor1 = Actor.new("Morgan", 26, "male")
+awesome_actor = Actor.new("Morgan", 26, "male")
 
-casting1 = Casting.new(role1)
-action1 = Action.new("Fly", 30, "I beleive I can fly")
+casting_captain_america = Casting.new(captain_america_role)
+awesome_actor_action = Action.new("Fly", 30, "I beleive I can fly")
 
-casting2 = Casting.new(role2)
-action2 = Action.new("Swim", 25, "I beleive I can swim")
+casting_iron_role = Casting.new(iron_role)
+awesome_actor_action_2 = Action.new("Iron", 30, "I beleive I'm Tony Stark")
 
-casting1.action(actor1, action1)
-casting2.action(actor1, action2)
+casting_captain_america.perform(awesome_actor, awesome_actor_action)
+casting_iron_role.perform(awesome_actor, awesome_actor_action_2)
 
-puts actor1.actions
-puts actor1.most_suitable_role
+puts awesome_actor.actions
+puts awesome_actor.most_suitable_role
+puts awesome_actor.average_action_time
