@@ -3,9 +3,8 @@ class Actor
   attr_reader :name, :age, :sex, :actions
   
   def initialize(name, age, sex)
-    @name = name
-    @age = age
-    @sex = sex
+    raise "Jesus, who are you?!" unless ["male", "female"].include?(sex)
+    @name, @age, @sex = name, age, sex
     @actions = []
   end
 
