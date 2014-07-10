@@ -40,16 +40,6 @@ class Casting
   end  
 
 end
-
-captain_america_role = Role.new("Captain America", "male", 17..40)
-iron_role = Role.new("Iron Man", "male", 15..34)
-
-awesome_actor = Actor.new("Morgan", 26, "male")
-
-casting_captain_america = Casting.new(captain_america_role)
-awesome_actor_action = Action.new("Fly", 30, "I beleive I can fly")
-
-casting_iron_role = Casting.new(iron_role)
 awesome_actor_action_2 = Action.new("Iron", 30, "I beleive I'm Tony Stark")
 
 casting_captain_america.perform(awesome_actor, awesome_actor_action)
