@@ -10,17 +10,7 @@ awesome_actor = Actor.new("Morgan", 26, "male")
 
 (someone Morgan, 26 years old)
 
-<<<<<<< HEAD
-Secondly, let's send an invitation to an actor (or just create one :)):
-
-awesome_actor = Actor.new("Morgan", 26, "male") (someone Morgan, 26 years old)
-
-
-It's time to organize casting for Captain America role:
-
-=======
 ### It's time to organize casting for Captain America role:
->>>>>>> bb77677d0816351995c938ded487e875e425b9ed
 casting_captain_america = Casting.new(captain_america_role)
 
 ### As every casting we have a commision. Since our theater is pretty cool we have invited the brightest stars and here they are:
