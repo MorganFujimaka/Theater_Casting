@@ -10,11 +10,11 @@ class Casting
   attr_reader :role
 
   def initialize(role)
-  	@role = role
+    @role = role
   end
 
   def is_suitable?(actor)
-  	role.sex == actor.sex && role.age.include?(actor.age)
+    role.sex == actor.sex && role.age.include?(actor.age)
   end
 
   def perform(actor, action)
