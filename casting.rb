@@ -36,15 +36,7 @@ class Casting
   end
 
   def average_score(actor, action)
-  	rate_actor(actor, action).inject { |sum, m| sum + m }.to_f / rate_actor(actor, action).size
+    rate_actor(actor, action).inject { |sum, m| sum + m }.to_f / rate_actor(actor, action).size
   end  
 
 end
-awesome_actor_action_2 = Action.new("Iron", 30, "I beleive I'm Tony Stark")
-
-casting_captain_america.perform(awesome_actor, awesome_actor_action)
-casting_iron_role.perform(awesome_actor, awesome_actor_action_2)
-
-puts awesome_actor.actions
-puts awesome_actor.most_suitable_role
-puts awesome_actor.average_action_time
