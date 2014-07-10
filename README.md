@@ -11,7 +11,7 @@ Secondly, let's send an invitation to an actor (or just create one :)):
 awesome_actor = Actor.new("Morgan", 26, "male") (someone Morgan, 26 years old)
 
 
-It's time to organize casting for Iron Man role:
+It's time to organize casting for Captain America role:
 
 casting_captain_america = Casting.new(captain_america_role)
 
