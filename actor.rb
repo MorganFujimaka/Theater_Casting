@@ -12,7 +12,8 @@ class Actor
   def most_suitable_role
     with_max_average = actions.select { |a| a[:average] == actions.map { |b| b[:average] }.max }
     most_suitable_roles = with_max_average.map { |w| w[:role] }
-    "You hold casting on different roles (#{actions.map {|a| a[:role]}.join(", ")}), but the most suitable for you is #{most_suitable_roles.join}."
+    "You hold casting on different roles (#{actions.map {|a| a[:role]}.join(", ")}),"
+    "but the most suitable for you is #{most_suitable_roles.join}."
   end
 
   def average_action_time
