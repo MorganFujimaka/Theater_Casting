@@ -3,7 +3,7 @@ require 'spec_helper'
 describe Actor do
 
   before do
-  	@actor = Actor.new("Morgan", 26, "male")
+    @actor = Actor.new("Morgan", 26, "male")
   end
   
   subject { @actor }
