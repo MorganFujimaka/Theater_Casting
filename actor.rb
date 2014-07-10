@@ -16,8 +16,8 @@ class Actor
   end
 
   def average_action_time
-  	average_time = actions.map { |a| a[:time] }.inject { |sum, i| sum + i } / actions.size
-  	"Your average time on a stage is #{average_time} minutes."
+    average_time = actions.map { |a| a[:time] }.inject { |sum, i| sum + i } / actions.size
+    "Your average time on a stage is #{average_time} minutes."
   end
 
 end
