@@ -8,7 +8,6 @@ describe Casting do
   
   subject { @casting }
   
-  it {should respond_to(:is_suitable?)}
   it {should respond_to(:perform)}
   it {should_not respond_to(:rate_actor)}
   it {should_not respond_to(:average_score)}
