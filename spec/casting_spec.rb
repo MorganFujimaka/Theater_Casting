@@ -3,7 +3,7 @@ require 'spec_helper'
 describe Casting do
 
   before do
-  	@casting = Casting.new(Role.new("Hulk", "male", 30..40))
+    @casting = Casting.new(Role.new("Hulk", "male", 30..40))
   end
   
   subject { @casting }
